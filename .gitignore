@@ -28,3 +28,6 @@ tags
 .hspec-failures
 better-cache/
 stack*.yaml.lock
+/files/
+!/files/template.tex
+/out/
