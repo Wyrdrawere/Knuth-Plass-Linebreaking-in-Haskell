@@ -129,8 +129,8 @@ minimumDemerits dfa = minimum $ map (\(d, _, _) -> d) $ mapMaybe snd $ assocs df
 
 --the algorithm
 
-knuthPlassLineBreaking' :: [Item b] -> [Width] -> Parameters -> Maybe b -> Either LineBreakError [[Item b]]
-knuthPlassLineBreaking' items lines' parameters' hyphen =
+knuthPlassLineBreaking' :: [Item b] -> Maybe b -> [Width] -> Parameters -> Either LineBreakError [[Item b]]
+knuthPlassLineBreaking' items hyphen lines' parameters' =
   fmap (processOutput hyphen items) (knuthPlassLineBreaking items lines' parameters')
 
 knuthPlassLineBreaking :: [Item b] -> [Width] -> Parameters -> Either LineBreakError [(Int, AdjRatio)]
